@@ -488,6 +488,109 @@
             font-style: italic;
         }
 
+        .depoimentos-aviso {
+            text-align: center;
+            font-size: 0.9rem;
+            color: var(--texto-claro);
+            margin-bottom: 32px;
+        }
+
+        .depoimentos-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .depoimento-card {
+            background: var(--branco);
+            border-radius: var(--radius-lg);
+            padding: 28px;
+            position: relative;
+            border: 1px solid var(--rosa-suave);
+            transition: var(--transicao);
+        }
+
+        .depoimento-card:hover {
+            box-shadow: var(--sombra-suave);
+        }
+
+        .depoimento-aspas {
+            margin-bottom: 12px;
+        }
+
+        .depoimento-aspas svg {
+            width: 32px;
+            height: 32px;
+            fill: var(--rosa-claro);
+            opacity: 0.6;
+        }
+
+        .depoimento-stars {
+            display: flex;
+            gap: 2px;
+            margin-bottom: 16px;
+        }
+
+        .depoimento-stars svg {
+            width: 18px;
+            height: 18px;
+            fill: #F5B041;
+        }
+
+        .depoimento-texto {
+            font-size: 0.98rem;
+            color: var(--texto-secundario);
+            font-style: italic;
+            line-height: 1.7;
+            margin-bottom: 20px;
+        }
+
+        .depoimento-autor {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding-top: 16px;
+            border-top: 1px solid var(--fundo-alt);
+        }
+
+        .depoimento-avatar {
+            width: 40px;
+            height: 40px;
+            background: var(--rosa-claro);
+            color: var(--branco);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        .depoimento-info {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .depoimento-nome {
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: var(--texto-principal);
+        }
+
+        .depoimento-verificado {
+            font-size: 0.8rem;
+            color: var(--texto-claro);
+        }
+
+        @media (min-width: 768px) {
+            .depoimentos-grid {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 24px;
+            }
+        }
+
         /* ==================== SEÇÃO URGÊNCIA ==================== */
         .urgencia {
             padding: 80px 0;
@@ -1034,8 +1137,71 @@
                 <span>Depoimentos</span>
                 <h2>Elas resolveram confiar no método e hoje vivem relacionamentos muito melhores:</h2>
             </div>
-            <div class="depoimentos-placeholder fade-in">
-                <p>[Inserir depoimentos reais aqui]</p>
+            <p class="depoimentos-aviso fade-in">Os depoimentos não contêm imagens das pessoas, pois pela lei precisamos manter sob sigilo.</p>
+            
+            <div class="depoimentos-grid fade-in">
+                <div class="depoimento-card">
+                    <div class="depoimento-aspas">
+                        <svg viewBox="0 0 24 24"><path d="M6 17h3l2-4V7H5v6h3zm8 0h3l2-4V7h-6v6h3z"/></svg>
+                    </div>
+                    <div class="depoimento-stars">
+                        <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                    </div>
+                    <p class="depoimento-texto">"Meu relacionamento melhorou muito com o protocolo e isso trouxe para nós como casal insights e maneiras de trabalhar as diferenças existentes."</p>
+                    <div class="depoimento-autor">
+                        <div class="depoimento-avatar">AP</div>
+                        <div class="depoimento-info">
+                            <span class="depoimento-nome">Aluna do curso</span>
+                            <span class="depoimento-verificado">Depoimento verificado</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="depoimento-card">
+                    <div class="depoimento-aspas">
+                        <svg viewBox="0 0 24 24"><path d="M6 17h3l2-4V7H5v6h3zm8 0h3l2-4V7h-6v6h3z"/></svg>
+                    </div>
+                    <div class="depoimento-stars">
+                        <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                    </div>
+                    <p class="depoimento-texto">"O protocolo ajudou a demonstrar empatia e respeito pelo limite de cada um, e a diferença no casamento é perceptível! Amigos e familiares vieram comentar sobre a nossa mudança!"</p>
+                    <div class="depoimento-autor">
+                        <div class="depoimento-avatar">ER</div>
+                        <div class="depoimento-info">
+                            <span class="depoimento-nome">Aluna do curso</span>
+                            <span class="depoimento-verificado">Depoimento verificado</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="depoimento-card">
+                    <div class="depoimento-aspas">
+                        <svg viewBox="0 0 24 24"><path d="M6 17h3l2-4V7H5v6h3zm8 0h3l2-4V7h-6v6h3z"/></svg>
+                    </div>
+                    <div class="depoimento-stars">
+                        <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                    </div>
+                    <p class="depoimento-texto">"O Protocolo é uma ferramenta importante para que possamos trabalhar as nossas diferenças e a forma como lidamos com situações. Salvou o meu casamento!"</p>
+                    <div class="depoimento-autor">
+                        <div class="depoimento-avatar">CS</div>
+                        <div class="depoimento-info">
+                            <span class="depoimento-nome">Aluna do curso</span>
+                            <span class="depoimento-verificado">Depoimento verificado</span>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
