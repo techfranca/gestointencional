@@ -84,6 +84,11 @@
             font-weight: 600;
         }
 
+        .destaque-verde {
+            color: var(--verde-cta);
+            font-weight: 700;
+        }
+
         /* Bloco de citação/destaque */
         .destaque-bloco {
             background: var(--fundo-destaque);
@@ -134,7 +139,7 @@
 
         /* ==================== HERO ==================== */
         .hero {
-            min-height: 88vh;
+            min-height: auto;
             display: flex;
             align-items: center;
             background: var(--branco);
@@ -156,7 +161,7 @@
         .hero-content {
             position: relative;
             z-index: 1;
-            padding: 80px 0;
+            padding: 48px 0 28px;
             text-align: center;
             max-width: 850px;
             margin: 0 auto;
@@ -184,6 +189,36 @@
             animation: fadeInUp 0.8s ease 0.4s forwards;
         }
 
+        .hero-scroll-indicator {
+            margin: 14px auto 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 4px;
+            width: fit-content;
+            color: var(--texto-claro);
+            opacity: 0;
+            animation: fadeInUp 0.8s ease 0.6s forwards;
+        }
+
+        .hero-scroll-indicator svg {
+            width: 20px;
+            height: 20px;
+            fill: currentColor;
+            animation: scrollArrowBounce 1.4s ease-in-out infinite;
+        }
+
+        @keyframes scrollArrowBounce {
+            0%, 100% {
+                transform: translateY(0);
+                opacity: 0.6;
+            }
+            50% {
+                transform: translateY(8px);
+                opacity: 1;
+            }
+        }
+
         @keyframes fadeInUp {
             from {
                 opacity: 0;
@@ -197,19 +232,33 @@
 
         /* ==================== SEÇÃO PROBLEMA ==================== */
         .problema {
-            padding: 80px 0;
+            padding: 48px 0;
             background: var(--fundo-alt);
         }
 
         .problema h2 {
             font-size: clamp(1.4rem, 3.5vw, 2rem);
             text-align: center;
-            margin-bottom: 40px;
+            margin-bottom: 24px;
         }
 
         .problema h2 .destaque {
             display: block;
             margin-top: 4px;
+        }
+
+        .problema-imagem {
+            max-width: 760px;
+            margin: 0 auto 28px;
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            box-shadow: var(--sombra-suave);
+        }
+
+        .problema-imagem img {
+            width: 100%;
+            height: auto;
+            display: block;
         }
 
         .problema-texto {
@@ -230,7 +279,7 @@
 
         /* ==================== SEÇÃO QUEM SOU ==================== */
         .quem-sou {
-            padding: 80px 0;
+            padding: 64px 0;
             background: var(--branco);
         }
 
@@ -304,7 +353,7 @@
 
         /* ==================== SEÇÃO MÉTODO ==================== */
         .metodo {
-            padding: 80px 0;
+            padding: 64px 0;
             background: var(--fundo-alt);
         }
 
@@ -374,7 +423,7 @@
 
         /* ==================== SEÇÃO ENTREGÁVEIS ==================== */
         .entregaveis {
-            padding: 80px 0;
+            padding: 64px 0;
             background: var(--branco);
         }
 
@@ -448,7 +497,7 @@
 
         /* ==================== SEÇÃO DEPOIMENTOS ==================== */
         .depoimentos {
-            padding: 80px 0;
+            padding: 64px 0;
             background: var(--fundo-alt);
         }
 
@@ -593,7 +642,7 @@
 
         /* ==================== SEÇÃO URGÊNCIA ==================== */
         .urgencia {
-            padding: 80px 0;
+            padding: 64px 0;
             background: var(--branco);
         }
 
@@ -622,7 +671,7 @@
 
         /* ==================== SEÇÃO OFERTA ==================== */
         .oferta {
-            padding: 80px 0;
+            padding: 64px 0;
             background: linear-gradient(180deg, var(--fundo-alt) 0%, var(--fundo-principal) 100%);
         }
 
@@ -755,7 +804,7 @@
 
         /* ==================== SEÇÃO GARANTIA ==================== */
         .garantia {
-            padding: 80px 0;
+            padding: 64px 0;
             background: var(--branco);
         }
 
@@ -809,7 +858,7 @@
 
         /* ==================== SEÇÃO FAQ ==================== */
         .faq {
-            padding: 80px 0;
+            padding: 64px 0;
             background: var(--fundo-alt);
         }
 
@@ -940,7 +989,7 @@
         /* ==================== MEDIA QUERIES ==================== */
         @media (max-width: 767px) {
             .hero-content {
-                padding: 56px 0;
+                padding: 36px 0 22px;
             }
 
             .quem-sou-grid {
@@ -976,7 +1025,7 @@
             }
 
             .hero-content {
-                padding: 96px 0;
+                padding: 56px 0 32px;
             }
 
             .problema,
@@ -988,7 +1037,11 @@
             .oferta,
             .garantia,
             .faq {
-                padding: 100px 0;
+                padding: 80px 0;
+            }
+
+            .problema {
+                padding: 56px 0;
             }
 
             .quem-sou-grid {
@@ -1032,7 +1085,11 @@
             .oferta,
             .garantia,
             .faq {
-                padding: 120px 0;
+                padding: 80px 0;
+            }
+
+            .problema {
+                padding: 56px 0;
             }
         }
     </style>
@@ -1042,12 +1099,16 @@
     <section class="hero">
         <div class="container">
             <div class="hero-content">
-                <h1>Você ainda ama o seu marido, mas em algum momento os dois pararam de se ver de verdade - e você não sabe exatamente quando isso aconteceu</h1>
+                <h1>Você ainda ama o seu marido, <span class="destaque">mas em algum momento os dois viraram mais amigos que parceiros.</span> <span class="destaque">E o pior: você não sabe como voltar.</span></h1>
                 <h2>Descubra o método do Gesto Intencional, baseado na maior pesquisa sobre casais felizes do século XX - E reconecte com seu parceiro em 15 dias, com apenas 10 minutos por dia, sem precisar que ele participe.</h2>
                 <a href="javascript:void(0)" class="btn-cta" onclick="scrollToOferta()">
                     Quero reconectar com meu marido
                     <svg viewBox="0 0 24 24"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/></svg>
                 </a>
+                <div class="hero-scroll-indicator" aria-hidden="true">
+                    <svg viewBox="0 0 24 24"><path d="M12 16.59L6.7 11.3l1.4-1.42L12 13.76l3.9-3.88 1.4 1.42z"/></svg>
+                    <svg viewBox="0 0 24 24"><path d="M12 16.59L6.7 11.3l1.4-1.42L12 13.76l3.9-3.88 1.4 1.42z"/></svg>
+                </div>
             </div>
         </div>
     </section>
@@ -1056,15 +1117,17 @@
     <section class="problema">
         <div class="container">
             <h2 class="fade-in">Isso não é falta de amor. <span class="destaque">É excesso de rotina</span></h2>
+            <div class="problema-imagem fade-in">
+                <img src="assets/faltadeatencao_casais.jpg" alt="Casal com distanciamento emocional deitados na cama usando celular" loading="lazy">
+            </div>
             <div class="problema-texto fade-in">
-                <p>Você acorda todo dia pensando que algo está errado, mas a vida segue, os filhos, o trabalho, a casa, as contas.</p>
-                <p>Mas às vezes, no final do dia, vem aquela sensação:</p>
+                <p>A vida parece normal, mas às vezes, no final do dia, vem aquela sensação:</p>
                 <div class="destaque-bloco">"A gente está aqui, na mesma casa, mas não está mais junto de verdade"</div>
-                <p>Não tem crise declarada, mas tem uma distância que foi crescendo sem que nenhum dos dois percebesse, e agora parece enorme</p>
-                <p>Você já tentou conversar. Ele ouviu, mas não mudou nada. Você já tentou fazer um programa diferente, mas a rotina engoliu em dias. Você já tentou se esforçar mais e ficou ainda mais exausta.</p>
+                <p>É uma distância que foi crescendo sem que nenhum dos dois percebesse, e agora parece enorme</p>
+                <p>Você já tentou conversar. Ele ouviu, mas não mudou nada. Você já tentou fazer um programa diferente, mas a rotina engoliu em dias.</p>
                 <p>E por baixo dessa rotina tem uma pergunta que você não quer fazer em voz alta:</p>
                 <div class="destaque-bloco">"Será que ainda dá tempo de recuperar o que a gente tinha?"</div>
-                <p><strong>Dá!</strong> Mas não do jeito que você está tentando.</p>
+                <p><strong class="destaque">Dá! Mas não do jeito que você está tentando.</strong></p>
             </div>
         </div>
     </section>
@@ -1080,11 +1143,11 @@
                 <div class="quem-sou-texto fade-in">
                     <h2>Eu consigo te afirmar isso, pois já ajudei mais de 350 relacionamentos</h2>
                     <p>Eu sou Gabi Vieira, psicóloga especializada em casais, com mais de 10 anos de experiência</p>
-                    <p>Em todo esse tempo atendendo casais, percebi que a maioria das mulheres que chegavam até mim não estavam em uma completa crise. Estavam num lugar mais silencioso - e às vezes mais perigoso:</p>
+                    <p>Em todo esse tempo atendendo casais, percebi que <strong>a maioria das mulheres que chegavam até mim não estavam em uma completa crise.</strong> Estavam num lugar mais silencioso - e às vezes mais perigoso:</p>
                     <div class="destaque-bloco">O casamento no piloto automático</div>
-                    <p>Passei anos estudando o que mantém casais felizes de verdade, não só os que evitam brigas, mas os que genuinamente se escolhem todos os dias.</p>
+                    <p>Passei anos estudando o que mantém casais felizes de verdade, <strong>os que genuinamente se escolhem todos os dias.</strong></p>
                     <p>Meu método foi construído depois de ajudar mais de 350 casais, com base na pesquisa de Judith S. Wallerstein, a maior estudiosa de casamentos e divórcios do século XX</p>
-                    <p>O resultado desse estudo é o que você vai encontrar aqui, traduzido em 15 ações simples, de 10 minutos por dia, que qualquer mulher pode aplicar na vida real</p>
+                    <p>O resultado desse estudo é o que você vai encontrar aqui, traduzido em 15 ações simples, de 10 minutos por dia, que qualquer mulher pode aplicar <span class="destaque-verde">na vida real</span></p>
                     <p class="quem-sou-nome">Gabi Vieira</p>
                     <p class="quem-sou-titulo">Psicóloga de Casais | Especialista em Comunicação</p>
                 </div>
@@ -1139,21 +1202,21 @@
             <div class="entregaveis-grid">
                 <div class="entregavel-card fade-in">
                     <div class="entregavel-icon">
-                        <svg viewBox="0 0 24 24"><path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12.1 21.35l-1.1-1C5.14 15.24 2 12.39 2 8.9 2 6.05 4.24 4 7.05 4c1.6 0 3.14.74 4.05 1.91C12.01 4.74 13.55 4 15.15 4 17.96 4 20.2 6.05 20.2 8.9c0 3.49-3.14 6.34-8.99 11.46l-1.11.99z"/></svg>
                     </div>
                     <h3>O manual completo do método gesto intencional</h3>
                     <p>15 ações diárias baseadas nas tarefas psicológicas. Cada ação vem com explicação do por que funciona, como aplicar e o que esperar. Direto ao ponto, sem teoria pesada.</p>
                 </div>
                 <div class="entregavel-card fade-in">
                     <div class="entregavel-icon">
-                        <svg viewBox="0 0 24 24"><path d="M18 4l2 4h-3l-2-4h-2l2 4h-3l-2-4H8l2 4H7L5 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V4h-4z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l7 4.5-7 4.5z"/></svg>
                     </div>
                     <h3>Um conteúdo completo em vídeo</h3>
                     <p>Eu vou te explicar a ciência por trás do método, os erros mais comuns que fazem o esforço não funcionar, e como usar o manual da forma certa para os 15 dias.</p>
                 </div>
                 <div class="entregavel-card fade-in">
                     <div class="entregavel-icon">
-                        <svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 10.99h7c-.53 4.12-3.28 7.79-7 8.94V12H5V6.3l7-3.11v8.8z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 1l2.09 4.23L18.75 6l-3.38 3.29.8 4.66L12 11.77 7.83 13.95l.8-4.66L5.25 6l4.66-.77L12 1zm7 12c-1.16 0-2.26.42-3.09 1.19L14 16.1l-1.91-1.91A4.37 4.37 0 0 0 9 13c-2.42 0-4.38 1.96-4.38 4.38S6.58 21.75 9 21.75c1.16 0 2.26-.42 3.09-1.19L14 18.65l1.91 1.91A4.37 4.37 0 0 0 19 21.75c2.42 0 4.38-1.96 4.38-4.38S21.42 13 19 13zm0 6.75c-.63 0-1.22-.24-1.67-.69L14 15.73l-3.33 3.33c-.45.45-1.04.69-1.67.69-1.31 0-2.38-1.06-2.38-2.38S7.69 15 9 15c.63 0 1.22.24 1.67.69L14 19.02l3.33-3.33c.45-.45 1.04-.69 1.67-.69 1.31 0 2.38 1.07 2.38 2.38s-1.07 2.37-2.38 2.37z"/></svg>
                     </div>
                     <h3>Bônus: Acesso vitalício</h3>
                     <p>Garantindo sua vaga hoje, você recebe acesso vitalício ao conteúdo, para revisitar quando quiser e precisar.</p>
@@ -1167,7 +1230,7 @@
         <div class="container">
             <div class="depoimentos-header fade-in">
                 <span>Depoimentos</span>
-                <h2>Elas resolveram confiar no método e hoje vivem relacionamentos muito melhores:</h2>
+                <h2>Elas resolveram confiar no método e hoje vivem relacionamentos felizes</h2>
             </div>
             <p class="depoimentos-aviso fade-in">Os depoimentos não contêm imagens das pessoas, pois pela lei precisamos manter sob sigilo.</p>
             
@@ -1243,7 +1306,7 @@
         <div class="container">
             <div class="urgencia-content fade-in">
                 <h2>Você chegou até aqui porque algo nessa página fez sentido pra você, não é coincidência!</h2>
-                <p>Por apenas <span class="preco-destaque">R$37,00</span> - menos do que um jantar fora, você pode começar a mudar a realidade do seu relacionamento hoje!</p>
+                <p>Agora, por menos do que um jantar fora, você pode começar a mudar a realidade do seu relacionamento hoje!</p>
                 <a href="javascript:void(0)" class="btn-cta" onclick="scrollToOferta()">
                     Quero começar agora
                     <svg viewBox="0 0 24 24"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/></svg>
@@ -1256,30 +1319,22 @@
     <section class="oferta" id="oferta">
         <div class="container">
             <div class="oferta-card fade-in">
-                <span class="oferta-badge">81% OFF</span>
+                <span class="oferta-badge">62% OFF</span>
                 
                 <div class="oferta-icon">
                     <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
                 </div>
                 
-                <h2 class="oferta-titulo">Ao se inscrever no Método do Gesto Intencional, você recebe:</h2>
+                <h2 class="oferta-titulo">Método do Gesto Intencional</h2>
                 <p class="oferta-subtitulo">Oferta Especial de Lançamento</p>
                 
                 <div class="oferta-item">
-                    <span class="oferta-item-nome">Manual completo do método</span>
-                    <span class="oferta-item-preco">R$100</span>
-                </div>
-                <div class="oferta-item">
-                    <span class="oferta-item-nome">Conteúdo em vídeo explicativo</span>
-                    <span class="oferta-item-preco">R$47</span>
-                </div>
-                <div class="oferta-item">
-                    <span class="oferta-item-nome">Acesso vitalício ao material</span>
-                    <span class="oferta-item-preco">R$50</span>
+                    <span class="oferta-item-nome">Acesso ao Método do Gesto Intencional</span>
+                    <span class="oferta-item-preco">R$97</span>
                 </div>
 
                 <div class="oferta-preco-container">
-                    <p class="oferta-de">De: <span>R$197,00</span></p>
+                    <p class="oferta-de">De: <span>R$97,00</span></p>
                     <p class="oferta-por">Por:</p>
                     <p class="oferta-preco">R$37</p>
                 </div>
