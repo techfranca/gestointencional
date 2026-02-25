@@ -179,9 +179,25 @@
             font-weight: 400;
             color: var(--texto-secundario);
             max-width: 700px;
-            margin: 0 auto 40px;
+            margin: 0 auto 24px;
             opacity: 0;
             animation: fadeInUp 0.8s ease 0.2s forwards;
+        }
+
+        .hero-imagem {
+            max-width: 560px;
+            margin: 0 auto 22px;
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            box-shadow: var(--sombra-suave);
+            opacity: 0;
+            animation: fadeInUp 0.8s ease 0.3s forwards;
+        }
+
+        .hero-imagem img {
+            width: 100%;
+            height: auto;
+            display: block;
         }
 
         .hero .btn-cta {
@@ -305,6 +321,10 @@
             box-shadow: var(--sombra-elevada);
             margin: 0 auto;
             display: block;
+        }
+
+        .quem-sou-imagem-mobile {
+            display: none;
         }
 
         .quem-sou-badge {
@@ -1004,6 +1024,15 @@
                 order: 2;
             }
 
+            .quem-sou-imagem-desktop {
+                display: none;
+            }
+
+            .quem-sou-imagem-mobile {
+                display: block;
+                margin: 6px 0 18px;
+            }
+
             .btn-cta {
                 white-space: nowrap;
                 flex-wrap: nowrap;
@@ -1101,6 +1130,9 @@
             <div class="hero-content">
                 <h1>Você ainda ama o seu marido, <span class="destaque">mas em algum momento os dois viraram mais amigos que parceiros.</span> E o pior: você não sabe como voltar.</h1>
                 <h2>Descubra o método do Gesto Intencional, baseado na maior pesquisa sobre casais felizes do século XX - E reconecte com seu parceiro em 15 dias, com apenas 10 minutos por dia, sem precisar que ele participe.</h2>
+                <div class="hero-imagem">
+                    <img src="assets/faltadeatencao_casais.jpg" alt="Casal com distanciamento emocional deitados na cama usando celular" loading="lazy">
+                </div>
                 <a href="javascript:void(0)" class="btn-cta" onclick="scrollToOferta()">
                     Quero reconectar com meu marido
                     <svg viewBox="0 0 24 24"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/></svg>
@@ -1117,9 +1149,6 @@
     <section class="problema">
         <div class="container">
             <h2 class="fade-in">Isso não é falta de amor. <span class="destaque">É excesso de rotina</span></h2>
-            <div class="problema-imagem fade-in">
-                <img src="assets/faltadeatencao_casais.jpg" alt="Casal com distanciamento emocional deitados na cama usando celular" loading="lazy">
-            </div>
             <div class="problema-texto fade-in">
                 <p>A vida parece normal, mas às vezes, no final do dia, vem aquela sensação:</p>
                 <div class="destaque-bloco">"A gente está aqui, na mesma casa, mas não está mais junto de verdade"</div>
@@ -1136,18 +1165,22 @@
     <section class="quem-sou">
         <div class="container">
             <div class="quem-sou-grid">
-                <div class="quem-sou-imagem fade-in">
+                <div class="quem-sou-imagem quem-sou-imagem-desktop fade-in">
                     <img src="assets/gaby-quem.jpg" alt="Gabi Vieira - Psicóloga especializada em casais" loading="lazy">
                     <div class="quem-sou-badge"><span>+350</span> casais transformados</div>
                 </div>
                 <div class="quem-sou-texto fade-in">
-                    <h2>Eu consigo te afirmar isso, pois já ajudei mais de 350 relacionamentos</h2>
+                    <h2>Eu consigo te afirmar isso, <span class="destaque">pois já ajudei mais de 350 relacionamentos</span></h2>
+                    <div class="quem-sou-imagem quem-sou-imagem-mobile">
+                        <img src="assets/gaby-quem.jpg" alt="Gabi Vieira - Psicóloga especializada em casais" loading="lazy">
+                        <div class="quem-sou-badge"><span>+350</span> casais transformados</div>
+                    </div>
                     <p>Eu sou Gabi Vieira, psicóloga especializada em casais, com mais de 10 anos de experiência</p>
                     <p>Em todo esse tempo atendendo casais, percebi que <strong>a maioria das mulheres que chegavam até mim não estavam em uma completa crise.</strong> Estavam num lugar mais silencioso - e às vezes mais perigoso:</p>
                     <div class="destaque-bloco">O casamento no piloto automático</div>
                     <p>Passei anos estudando o que mantém casais felizes de verdade, <strong>os que genuinamente se escolhem todos os dias.</strong></p>
                     <p>Meu método foi construído depois de ajudar mais de 350 casais, com base na pesquisa de Judith S. Wallerstein, a maior estudiosa de casamentos e divórcios do século XX</p>
-                    <p>O resultado desse estudo é o que você vai encontrar aqui, traduzido em 15 ações simples, de 10 minutos por dia, que qualquer mulher pode aplicar <span class="destaque-verde">na vida real</span></p>
+                    <p><span class="destaque-verde">O resultado desse estudo é o que você vai encontrar aqui, traduzido em 15 ações simples, de 10 minutos por dia, que qualquer mulher pode aplicar na vida real</span></p>
                     <p class="quem-sou-nome">Gabi Vieira</p>
                     <p class="quem-sou-titulo">Psicóloga de Casais | Especialista em Comunicação</p>
                 </div>
@@ -1158,7 +1191,7 @@
     <!-- MÉTODO -->
     <section class="metodo">
         <div class="container">
-            <h2 class="fade-in">A felicidade no casamento não vem dos grandes momentos. Vem dos micro-momentos de conexão repetidos todos os dias</h2>
+            <h2 class="fade-in">A felicidade no casamento não vem dos grandes momentos. <span class="destaque">Vem dos micro-momentos de conexão repetidos todos os dias</span></h2>
             <div class="metodo-lista fade-in">
                 <div class="metodo-item">
                     <div class="metodo-check">
