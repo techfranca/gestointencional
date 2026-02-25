@@ -1,0 +1,1246 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Método do Gesto Intencional - Reconecte com seu parceiro em 15 dias, com apenas 10 minutos por dia">
+    <title>Método do Gesto Intencional | Gabi Vieira</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
+    
+    <style>
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            /* Cores principais */
+            --verde-cta: #23C65F;
+            --verde-cta-hover: #1ea850;
+            --vermelho-paixao: #B85450;
+            --vermelho-paixao-light: #C4635F;
+            
+            /* Paleta rosé */
+            --rosa-coral: #C4847A;
+            --rosa-claro: #D4A59A;
+            --rosa-suave: #E8D4CF;
+            
+            /* Textos */
+            --texto-principal: #4A3434;
+            --texto-secundario: #6B5050;
+            --texto-claro: #8A7070;
+            
+            /* Fundos */
+            --fundo-principal: #FDF8F6;
+            --fundo-alt: #FAF0ED;
+            --fundo-card: #FFFFFF;
+            --fundo-destaque: #FFF5F3;
+            
+            /* Utilitários */
+            --branco: #FFFFFF;
+            --sombra-suave: 0 4px 20px rgba(74, 52, 52, 0.06);
+            --sombra-elevada: 0 8px 40px rgba(74, 52, 52, 0.10);
+            --sombra-card: 0 2px 12px rgba(74, 52, 52, 0.04);
+            --transicao: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            --radius: 16px;
+            --radius-lg: 24px;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            color: var(--texto-principal);
+            background-color: var(--fundo-principal);
+            line-height: 1.7;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-weight: 600;
+            line-height: 1.3;
+            color: var(--texto-principal);
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* Destaque vermelho paixão */
+        .destaque {
+            color: var(--vermelho-paixao);
+            font-weight: 600;
+        }
+
+        /* Bloco de citação/destaque */
+        .destaque-bloco {
+            background: var(--fundo-destaque);
+            border-left: 3px solid var(--vermelho-paixao);
+            padding: 20px 24px;
+            margin: 24px 0;
+            border-radius: 0 var(--radius) var(--radius) 0;
+            font-style: italic;
+            font-size: 1.1rem;
+            color: var(--texto-principal);
+        }
+
+        /* Botão CTA verde */
+        .btn-cta {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            background: var(--verde-cta);
+            color: var(--branco);
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-size: 1rem;
+            font-weight: 600;
+            text-decoration: none;
+            padding: 18px 36px;
+            border-radius: 50px;
+            border: none;
+            cursor: pointer;
+            transition: var(--transicao);
+            box-shadow: 0 4px 15px rgba(35, 198, 95, 0.25);
+        }
+
+        .btn-cta:hover {
+            background: var(--verde-cta-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 25px rgba(35, 198, 95, 0.35);
+        }
+
+        .btn-cta:active {
+            transform: translateY(0);
+        }
+
+        .btn-cta svg {
+            width: 18px;
+            height: 18px;
+            fill: currentColor;
+        }
+
+        /* ==================== HERO ==================== */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            background: var(--branco);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 50%;
+            height: 100%;
+            background: linear-gradient(135deg, var(--fundo-destaque) 0%, transparent 60%);
+            pointer-events: none;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            padding: 80px 0;
+            text-align: center;
+            max-width: 850px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: clamp(1.65rem, 4.5vw, 2.75rem);
+            margin-bottom: 24px;
+            opacity: 0;
+            animation: fadeInUp 0.8s ease forwards;
+        }
+
+        .hero h2 {
+            font-size: clamp(1rem, 2.2vw, 1.2rem);
+            font-weight: 400;
+            color: var(--texto-secundario);
+            max-width: 700px;
+            margin: 0 auto 40px;
+            opacity: 0;
+            animation: fadeInUp 0.8s ease 0.2s forwards;
+        }
+
+        .hero .btn-cta {
+            opacity: 0;
+            animation: fadeInUp 0.8s ease 0.4s forwards;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* ==================== SEÇÃO PROBLEMA ==================== */
+        .problema {
+            padding: 80px 0;
+            background: var(--fundo-alt);
+        }
+
+        .problema h2 {
+            font-size: clamp(1.4rem, 3.5vw, 2rem);
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .problema h2 .destaque {
+            display: block;
+            margin-top: 4px;
+        }
+
+        .problema-texto {
+            max-width: 680px;
+            margin: 0 auto;
+            font-size: 1.05rem;
+            color: var(--texto-secundario);
+        }
+
+        .problema-texto p {
+            margin-bottom: 20px;
+        }
+
+        .problema-texto strong {
+            color: var(--texto-principal);
+            font-weight: 600;
+        }
+
+        /* ==================== SEÇÃO QUEM SOU ==================== */
+        .quem-sou {
+            padding: 80px 0;
+            background: var(--branco);
+        }
+
+        .quem-sou-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 40px;
+            align-items: center;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .quem-sou-imagem {
+            position: relative;
+            text-align: center;
+        }
+
+        .quem-sou-imagem img {
+            width: 100%;
+            max-width: 320px;
+            height: auto;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--sombra-elevada);
+            margin: 0 auto;
+            display: block;
+        }
+
+        .quem-sou-badge {
+            position: absolute;
+            bottom: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--branco);
+            padding: 10px 20px;
+            border-radius: 50px;
+            box-shadow: var(--sombra-suave);
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--texto-principal);
+            white-space: nowrap;
+        }
+
+        .quem-sou-badge span {
+            color: var(--rosa-coral);
+        }
+
+        .quem-sou-texto h2 {
+            font-size: clamp(1.35rem, 3vw, 1.85rem);
+            margin-bottom: 20px;
+        }
+
+        .quem-sou-texto p {
+            margin-bottom: 16px;
+            font-size: 1.02rem;
+            color: var(--texto-secundario);
+        }
+
+        .quem-sou-nome {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--texto-principal);
+            margin-top: 24px;
+            margin-bottom: 4px;
+        }
+
+        .quem-sou-titulo {
+            font-size: 0.95rem;
+            color: var(--rosa-coral);
+            font-weight: 500;
+        }
+
+        /* ==================== SEÇÃO MÉTODO ==================== */
+        .metodo {
+            padding: 80px 0;
+            background: var(--fundo-alt);
+        }
+
+        .metodo h2 {
+            font-size: clamp(1.35rem, 3vw, 1.85rem);
+            text-align: center;
+            margin-bottom: 40px;
+            max-width: 750px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .metodo-lista {
+            max-width: 550px;
+            margin: 0 auto 40px;
+            background: var(--branco);
+            border-radius: var(--radius-lg);
+            padding: 8px;
+            box-shadow: var(--sombra-card);
+        }
+
+        .metodo-item {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            padding: 18px 20px;
+            border-radius: var(--radius);
+            transition: var(--transicao);
+        }
+
+        .metodo-item:hover {
+            background: var(--fundo-destaque);
+        }
+
+        .metodo-check {
+            flex-shrink: 0;
+            width: 28px;
+            height: 28px;
+            background: var(--verde-cta);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .metodo-check svg {
+            width: 14px;
+            height: 14px;
+            fill: var(--branco);
+        }
+
+        .metodo-item p {
+            font-size: 1.02rem;
+            color: var(--texto-principal);
+        }
+
+        .metodo-conclusao {
+            text-align: center;
+            max-width: 650px;
+            margin: 0 auto;
+        }
+
+        .metodo-conclusao p {
+            color: var(--texto-secundario);
+            font-size: 1.05rem;
+        }
+
+        /* ==================== SEÇÃO ENTREGÁVEIS ==================== */
+        .entregaveis {
+            padding: 80px 0;
+            background: var(--branco);
+        }
+
+        .entregaveis-header {
+            text-align: center;
+            margin-bottom: 48px;
+        }
+
+        .entregaveis-header span {
+            display: inline-block;
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--rosa-coral);
+            margin-bottom: 12px;
+        }
+
+        .entregaveis h2 {
+            font-size: clamp(1.4rem, 3.5vw, 2rem);
+        }
+
+        .entregaveis-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .entregavel-card {
+            background: var(--fundo-alt);
+            border-radius: var(--radius-lg);
+            padding: 28px;
+            transition: var(--transicao);
+            border: 1px solid transparent;
+        }
+
+        .entregavel-card:hover {
+            border-color: var(--rosa-suave);
+            box-shadow: var(--sombra-suave);
+        }
+
+        .entregavel-icon {
+            width: 52px;
+            height: 52px;
+            background: linear-gradient(135deg, var(--verde-cta) 0%, #2dd86f 100%);
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 18px;
+        }
+
+        .entregavel-icon svg {
+            width: 26px;
+            height: 26px;
+            fill: var(--branco);
+        }
+
+        .entregavel-card h3 {
+            font-size: 1.15rem;
+            margin-bottom: 10px;
+        }
+
+        .entregavel-card p {
+            font-size: 0.98rem;
+            color: var(--texto-secundario);
+            line-height: 1.6;
+        }
+
+        /* ==================== SEÇÃO DEPOIMENTOS ==================== */
+        .depoimentos {
+            padding: 80px 0;
+            background: var(--fundo-alt);
+        }
+
+        .depoimentos-header {
+            text-align: center;
+            margin-bottom: 48px;
+        }
+
+        .depoimentos-header span {
+            display: inline-block;
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--rosa-coral);
+            margin-bottom: 12px;
+        }
+
+        .depoimentos h2 {
+            font-size: clamp(1.4rem, 3.5vw, 2rem);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .depoimentos-placeholder {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+            padding: 60px 32px;
+            background: var(--branco);
+            border-radius: var(--radius-lg);
+            border: 2px dashed var(--rosa-suave);
+        }
+
+        .depoimentos-placeholder p {
+            color: var(--texto-claro);
+            font-style: italic;
+        }
+
+        /* ==================== SEÇÃO URGÊNCIA ==================== */
+        .urgencia {
+            padding: 80px 0;
+            background: var(--branco);
+        }
+
+        .urgencia-content {
+            text-align: center;
+            max-width: 650px;
+            margin: 0 auto;
+        }
+
+        .urgencia h2 {
+            font-size: clamp(1.25rem, 3vw, 1.65rem);
+            margin-bottom: 20px;
+        }
+
+        .urgencia p {
+            font-size: 1.1rem;
+            color: var(--texto-secundario);
+            margin-bottom: 32px;
+        }
+
+        .urgencia .preco-destaque {
+            color: var(--verde-cta);
+            font-weight: 700;
+            font-size: 1.25rem;
+        }
+
+        /* ==================== SEÇÃO OFERTA ==================== */
+        .oferta {
+            padding: 80px 0;
+            background: linear-gradient(180deg, var(--fundo-alt) 0%, var(--fundo-principal) 100%);
+        }
+
+        .oferta-card {
+            max-width: 460px;
+            margin: 0 auto;
+            background: var(--branco);
+            border-radius: var(--radius-lg);
+            padding: 36px 28px;
+            text-align: center;
+            position: relative;
+            box-shadow: var(--sombra-elevada);
+            border: 1px solid var(--rosa-suave);
+        }
+
+        .oferta-badge {
+            position: absolute;
+            top: -14px;
+            right: 24px;
+            background: var(--vermelho-paixao);
+            color: var(--branco);
+            font-size: 0.8rem;
+            font-weight: 700;
+            padding: 8px 16px;
+            border-radius: 20px;
+        }
+
+        .oferta-icon {
+            width: 48px;
+            height: 48px;
+            background: var(--fundo-destaque);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+        }
+
+        .oferta-icon svg {
+            width: 24px;
+            height: 24px;
+            fill: var(--rosa-coral);
+        }
+
+        .oferta-titulo {
+            color: var(--verde-cta);
+            font-size: 1.15rem;
+            margin-bottom: 4px;
+        }
+
+        .oferta-subtitulo {
+            color: var(--texto-secundario);
+            font-size: 0.95rem;
+            margin-bottom: 28px;
+        }
+
+        .oferta-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 14px 0;
+            border-bottom: 1px solid var(--fundo-alt);
+        }
+
+        .oferta-item:last-of-type {
+            border-bottom: none;
+        }
+
+        .oferta-item-nome {
+            font-size: 0.95rem;
+            text-align: left;
+            color: var(--texto-principal);
+        }
+
+        .oferta-item-preco {
+            font-size: 0.95rem;
+            color: var(--vermelho-paixao);
+            font-weight: 600;
+        }
+
+        .oferta-preco-container {
+            margin: 28px 0;
+            padding: 24px 0;
+            border-top: 1px solid var(--fundo-alt);
+        }
+
+        .oferta-de {
+            color: var(--texto-claro);
+            font-size: 0.95rem;
+        }
+
+        .oferta-de span {
+            text-decoration: line-through;
+        }
+
+        .oferta-por {
+            color: var(--texto-secundario);
+            font-size: 1rem;
+            margin-top: 8px;
+        }
+
+        .oferta-preco {
+            font-size: 3.25rem;
+            font-weight: 700;
+            color: var(--verde-cta);
+            line-height: 1;
+            margin-top: 4px;
+        }
+
+        .oferta .btn-cta {
+            width: 100%;
+            padding: 20px 32px;
+            font-size: 1rem;
+            margin-top: 8px;
+        }
+
+        .oferta-acesso {
+            margin-top: 16px;
+            font-size: 0.85rem;
+            color: var(--texto-claro);
+        }
+
+        .oferta-acesso svg {
+            width: 14px;
+            height: 14px;
+            fill: var(--verde-cta);
+            vertical-align: middle;
+            margin-right: 4px;
+        }
+
+        /* ==================== SEÇÃO GARANTIA ==================== */
+        .garantia {
+            padding: 80px 0;
+            background: var(--branco);
+        }
+
+        .garantia-card {
+            max-width: 650px;
+            margin: 0 auto;
+            text-align: center;
+            background: var(--fundo-alt);
+            border-radius: var(--radius-lg);
+            padding: 48px 32px;
+            border: 1px dashed var(--rosa-suave);
+        }
+
+        .garantia-icon {
+            width: 72px;
+            height: 72px;
+            background: var(--fundo-destaque);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+        }
+
+        .garantia-icon svg {
+            width: 36px;
+            height: 36px;
+            fill: var(--verde-cta);
+        }
+
+        .garantia h2 {
+            font-size: clamp(1.3rem, 3vw, 1.65rem);
+            margin-bottom: 16px;
+        }
+
+        .garantia p {
+            font-size: 1.02rem;
+            color: var(--texto-secundario);
+            margin-bottom: 12px;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .garantia-destaque {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: var(--verde-cta);
+            margin-top: 20px;
+        }
+
+        /* ==================== SEÇÃO FAQ ==================== */
+        .faq {
+            padding: 80px 0;
+            background: var(--fundo-alt);
+        }
+
+        .faq-header {
+            text-align: center;
+            margin-bottom: 48px;
+        }
+
+        .faq-header span {
+            display: inline-block;
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--rosa-coral);
+            margin-bottom: 12px;
+        }
+
+        .faq h2 {
+            font-size: clamp(1.4rem, 3.5vw, 2rem);
+        }
+
+        .faq-lista {
+            max-width: 750px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background: var(--branco);
+            border-radius: var(--radius);
+            margin-bottom: 12px;
+            overflow: hidden;
+            transition: var(--transicao);
+            border: 1px solid transparent;
+        }
+
+        .faq-item:hover {
+            border-color: var(--rosa-suave);
+        }
+
+        .faq-pergunta {
+            width: 100%;
+            background: none;
+            border: none;
+            padding: 22px 24px;
+            text-align: left;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 16px;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--texto-principal);
+            transition: var(--transicao);
+        }
+
+        .faq-icon {
+            flex-shrink: 0;
+            width: 28px;
+            height: 28px;
+            background: var(--fundo-alt);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transicao);
+        }
+
+        .faq-icon svg {
+            width: 12px;
+            height: 12px;
+            fill: var(--texto-principal);
+            transition: var(--transicao);
+        }
+
+        .faq-item.ativo .faq-icon {
+            background: var(--verde-cta);
+        }
+
+        .faq-item.ativo .faq-icon svg {
+            fill: var(--branco);
+            transform: rotate(180deg);
+        }
+
+        .faq-resposta {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease;
+        }
+
+        .faq-resposta-inner {
+            padding: 0 24px 24px;
+            font-size: 0.98rem;
+            line-height: 1.7;
+            color: var(--texto-secundario);
+        }
+
+        .faq-item.ativo .faq-resposta {
+            max-height: 400px;
+        }
+
+        /* ==================== FOOTER ==================== */
+        .footer {
+            padding: 40px 0;
+            background: var(--texto-principal);
+            text-align: center;
+        }
+
+        .footer p {
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.9rem;
+        }
+
+        /* ==================== SCROLL ANIMATIONS ==================== */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(25px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ==================== MEDIA QUERIES ==================== */
+        @media (min-width: 768px) {
+            .container {
+                padding: 0 40px;
+            }
+
+            .hero-content {
+                padding: 120px 0;
+            }
+
+            .problema,
+            .quem-sou,
+            .metodo,
+            .entregaveis,
+            .depoimentos,
+            .urgencia,
+            .oferta,
+            .garantia,
+            .faq {
+                padding: 100px 0;
+            }
+
+            .quem-sou-grid {
+                grid-template-columns: 1fr 1.3fr;
+                gap: 60px;
+                text-align: left;
+            }
+
+            .quem-sou-imagem img {
+                max-width: 100%;
+            }
+
+            .quem-sou-badge {
+                left: auto;
+                right: -10px;
+                bottom: 20px;
+                transform: none;
+            }
+
+            .entregaveis-grid {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 24px;
+            }
+
+            .oferta-card {
+                padding: 44px 36px;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .container {
+                padding: 0 60px;
+            }
+
+            .problema,
+            .quem-sou,
+            .metodo,
+            .entregaveis,
+            .depoimentos,
+            .urgencia,
+            .oferta,
+            .garantia,
+            .faq {
+                padding: 120px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- HERO -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Você ainda ama o seu marido, mas em algum momento os dois pararam de se ver de verdade - e você não sabe exatamente quando isso aconteceu</h1>
+                <h2>Descubra o método do Gesto Intencional, baseado na maior pesquisa sobre casais felizes do século XX - E reconecte com seu parceiro em 15 dias, com apenas 10 minutos por dia, sem precisar que ele participe.</h2>
+                <a href="javascript:void(0)" class="btn-cta" onclick="scrollToOferta()">
+                    Quero reconectar com meu marido
+                    <svg viewBox="0 0 24 24"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/></svg>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROBLEMA -->
+    <section class="problema">
+        <div class="container">
+            <h2 class="fade-in">Isso não é falta de amor. <span class="destaque">É excesso de rotina</span></h2>
+            <div class="problema-texto fade-in">
+                <p>Você acorda todo dia pensando que algo está errado, mas a vida segue, os filhos, o trabalho, a casa, as contas.</p>
+                <p>Mas às vezes, no final do dia, vem aquela sensação:</p>
+                <div class="destaque-bloco">"A gente está aqui, na mesma casa, mas não está mais junto de verdade"</div>
+                <p>Não tem crise declarada, mas tem uma distância que foi crescendo sem que nenhum dos dois percebesse, e agora parece enorme</p>
+                <p>Você já tentou conversar. Ele ouviu, mas não mudou nada. Você já tentou fazer um programa diferente, mas a rotina engoliu em dias. Você já tentou se esforçar mais e ficou ainda mais exausta.</p>
+                <p>E por baixo dessa rotina tem uma pergunta que você não quer fazer em voz alta:</p>
+                <div class="destaque-bloco">"Será que ainda dá tempo de recuperar o que a gente tinha?"</div>
+                <p><strong>Dá!</strong> Mas não do jeito que você está tentando.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- QUEM SOU -->
+    <section class="quem-sou">
+        <div class="container">
+            <div class="quem-sou-grid">
+                <div class="quem-sou-imagem fade-in">
+                    <img src="assets/gaby-quem.jpg" alt="Gabi Vieira - Psicóloga especializada em casais" loading="lazy">
+                    <div class="quem-sou-badge"><span>+350</span> casais transformados</div>
+                </div>
+                <div class="quem-sou-texto fade-in">
+                    <h2>Eu consigo te afirmar isso, pois já ajudei mais de 350 relacionamentos</h2>
+                    <p>Eu sou Gabi Vieira, psicóloga especializada em casais, com mais de 10 anos de experiência</p>
+                    <p>Em todo esse tempo atendendo casais, percebi que a maioria das mulheres que chegavam até mim não estavam em uma completa crise. Estavam num lugar mais silencioso - e às vezes mais perigoso:</p>
+                    <div class="destaque-bloco">O casamento no piloto automático</div>
+                    <p>Passei anos estudando o que mantém casais felizes de verdade, não só os que evitam brigas, mas os que genuinamente se escolhem todos os dias.</p>
+                    <p>Meu método foi construído depois de ajudar mais de 350 casais, com base na pesquisa de Judith S. Wallerstein, a maior estudiosa de casamentos e divórcios do século XX</p>
+                    <p>O resultado desse estudo é o que você vai encontrar aqui, traduzido em 15 ações simples, de 10 minutos por dia, que qualquer mulher pode aplicar na vida real</p>
+                    <p class="quem-sou-nome">Gabi Vieira</p>
+                    <p class="quem-sou-titulo">Psicóloga de Casais | Especialista em Comunicação</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MÉTODO -->
+    <section class="metodo">
+        <div class="container">
+            <h2 class="fade-in">A felicidade no casamento não vem dos grandes momentos. Vem dos micro-momentos de conexão repetidos todos os dias</h2>
+            <div class="metodo-lista fade-in">
+                <div class="metodo-item">
+                    <div class="metodo-check">
+                        <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg>
+                    </div>
+                    <p>Um elogio genuíno</p>
+                </div>
+                <div class="metodo-item">
+                    <div class="metodo-check">
+                        <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg>
+                    </div>
+                    <p>Um toque sem segunda intenção</p>
+                </div>
+                <div class="metodo-item">
+                    <div class="metodo-check">
+                        <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg>
+                    </div>
+                    <p>Uma risada no meio da tensão</p>
+                </div>
+                <div class="metodo-item">
+                    <div class="metodo-check">
+                        <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg>
+                    </div>
+                    <p>A escolha de proteger em vez de culpar</p>
+                </div>
+            </div>
+            <div class="metodo-conclusao fade-in">
+                <div class="destaque-bloco">Esses gestos não são aleatórios. Cada um ativa uma função psicológica específica - Amizade, respeito, cumplicidade, segurança emocional.</div>
+                <p>Que são a base de todo casamento feliz.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ENTREGÁVEIS -->
+    <section class="entregaveis">
+        <div class="container">
+            <div class="entregaveis-header fade-in">
+                <span>O que você vai receber</span>
+                <h2>O que você vai levar com o protocolo:</h2>
+            </div>
+            <div class="entregaveis-grid">
+                <div class="entregavel-card fade-in">
+                    <div class="entregavel-icon">
+                        <svg viewBox="0 0 24 24"><path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/></svg>
+                    </div>
+                    <h3>O manual completo do método gesto intencional</h3>
+                    <p>15 ações diárias baseadas nas tarefas psicológicas. Cada ação vem com explicação do por que funciona, como aplicar e o que esperar. Direto ao ponto, sem teoria pesada.</p>
+                </div>
+                <div class="entregavel-card fade-in">
+                    <div class="entregavel-icon">
+                        <svg viewBox="0 0 24 24"><path d="M18 4l2 4h-3l-2-4h-2l2 4h-3l-2-4H8l2 4H7L5 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V4h-4z"/></svg>
+                    </div>
+                    <h3>Um conteúdo completo em vídeo</h3>
+                    <p>Eu vou te explicar a ciência por trás do método, os erros mais comuns que fazem o esforço não funcionar, e como usar o manual da forma certa para os 15 dias.</p>
+                </div>
+                <div class="entregavel-card fade-in">
+                    <div class="entregavel-icon">
+                        <svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 10.99h7c-.53 4.12-3.28 7.79-7 8.94V12H5V6.3l7-3.11v8.8z"/></svg>
+                    </div>
+                    <h3>Bônus: Acesso vitalício</h3>
+                    <p>Garantindo sua vaga hoje, você recebe acesso vitalício ao conteúdo, para revisitar quando quiser e precisar.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- DEPOIMENTOS -->
+    <section class="depoimentos">
+        <div class="container">
+            <div class="depoimentos-header fade-in">
+                <span>Depoimentos</span>
+                <h2>Elas resolveram confiar no método e hoje vivem relacionamentos muito melhores:</h2>
+            </div>
+            <div class="depoimentos-placeholder fade-in">
+                <p>[Inserir depoimentos reais aqui]</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- URGÊNCIA -->
+    <section class="urgencia">
+        <div class="container">
+            <div class="urgencia-content fade-in">
+                <h2>Você chegou até aqui porque algo nessa página fez sentido pra você, não é coincidência!</h2>
+                <p>Por apenas <span class="preco-destaque">R$37,00</span> - menos do que um jantar fora, você pode começar a mudar a realidade do seu relacionamento hoje!</p>
+                <a href="javascript:void(0)" class="btn-cta" onclick="scrollToOferta()">
+                    Quero começar agora
+                    <svg viewBox="0 0 24 24"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/></svg>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- OFERTA -->
+    <section class="oferta" id="oferta">
+        <div class="container">
+            <div class="oferta-card fade-in">
+                <span class="oferta-badge">81% OFF</span>
+                
+                <div class="oferta-icon">
+                    <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                </div>
+                
+                <h2 class="oferta-titulo">Ao se inscrever no Método do Gesto Intencional, você recebe:</h2>
+                <p class="oferta-subtitulo">Oferta Especial de Lançamento</p>
+                
+                <div class="oferta-item">
+                    <span class="oferta-item-nome">Manual completo do método</span>
+                    <span class="oferta-item-preco">R$100</span>
+                </div>
+                <div class="oferta-item">
+                    <span class="oferta-item-nome">Conteúdo em vídeo explicativo</span>
+                    <span class="oferta-item-preco">R$47</span>
+                </div>
+                <div class="oferta-item">
+                    <span class="oferta-item-nome">Acesso vitalício ao material</span>
+                    <span class="oferta-item-preco">R$50</span>
+                </div>
+
+                <div class="oferta-preco-container">
+                    <p class="oferta-de">De: <span>R$197,00</span></p>
+                    <p class="oferta-por">Por:</p>
+                    <p class="oferta-preco">R$37</p>
+                </div>
+
+                <a href="#" class="btn-cta" id="btn-checkout">
+                    Garantir Oferta Especial
+                    <svg viewBox="0 0 24 24"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/></svg>
+                </a>
+                
+                <p class="oferta-acesso">
+                    <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg>
+                    Acesso imediato após a compra
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- GARANTIA -->
+    <section class="garantia">
+        <div class="container">
+            <div class="garantia-card fade-in">
+                <div class="garantia-icon">
+                    <svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/></svg>
+                </div>
+                <h2>Garantia de 7 dias</h2>
+                <p>Se em 7 dias você não sentir que o material é exatamente o que eu prometi, você me pede o reembolso que eu devolvo 100% do seu dinheiro - sem burocracia.</p>
+                <p class="garantia-destaque">O risco é meu, o resultado é seu!</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq">
+        <div class="container">
+            <div class="faq-header fade-in">
+                <span>Dúvidas</span>
+                <h2>FAQ — Tirando suas dúvidas reais</h2>
+            </div>
+            <div class="faq-lista">
+                <div class="faq-item fade-in">
+                    <button class="faq-pergunta">
+                        <span>"Meu casamento não está em crise. Isso é pra mim?"</span>
+                        <div class="faq-icon">
+                            <svg viewBox="0 0 24 24"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/></svg>
+                        </div>
+                    </button>
+                    <div class="faq-resposta">
+                        <div class="faq-resposta-inner">
+                            Exatamente por isso é o momento certo. O Método do Gesto Intencional não é para casamento em crise — é para casamento no piloto automático. Reacender uma chama baixa é muito mais fácil do que tentar acender uma que já apagou. Wallerstein descobriu isso estudando casais felizes: eles cuidam da relação de forma contínua, antes de precisar.
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-item fade-in">
+                    <button class="faq-pergunta">
+                        <span>"Eu já tentei de tudo. Por que isso vai ser diferente?"</span>
+                        <div class="faq-icon">
+                            <svg viewBox="0 0 24 24"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/></svg>
+                        </div>
+                    </button>
+                    <div class="faq-resposta">
+                        <div class="faq-resposta-inner">
+                            Porque o que você tentou antes provavelmente eram coisas aleatórias — uma viagem, uma conversa, um esforço sem estrutura. O Método do Gesto Intencional tem uma sequência psicológica — cada ação nos 15 dias foi escolhida para ativar uma função emocional específica identificada na pesquisa de Wallerstein. Não é tentativa e erro. É ciência aplicada na prática.
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-item fade-in">
+                    <button class="faq-pergunta">
+                        <span>"E se o meu marido não quiser participar?"</span>
+                        <div class="faq-icon">
+                            <svg viewBox="0 0 24 24"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/></svg>
+                        </div>
+                    </button>
+                    <div class="faq-resposta">
+                        <div class="faq-resposta-inner">
+                            Esse método foi desenhado para funcionar só com você. Você não vai precisar convencer o seu marido de nada, mostrar um método ou ter uma conversa difícil. As ações mudam a energia que você projeta na relação — e essa mudança é percebida por ele de forma natural, sem que você precise pedir ou explicar.
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-item fade-in">
+                    <button class="faq-pergunta">
+                        <span>"Não tenho tempo. Tenho filho pequeno, trabalho fora e faço tudo em casa."</span>
+                        <div class="faq-icon">
+                            <svg viewBox="0 0 24 24"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/></svg>
+                        </div>
+                    </button>
+                    <div class="faq-resposta">
+                        <div class="faq-resposta-inner">
+                            Eu sei disso. E foi exatamente pensando em você que o método foi construído. São 10 minutos por dia — uma ação clara, objetiva, sem leitura longa ou teoria densa. O tamanho do método é parte do design. Porque se não cabe na sua vida como ela é, não funciona.
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-item fade-in">
+                    <button class="faq-pergunta">
+                        <span>"Quanto tempo leva para ver resultado?"</span>
+                        <div class="faq-icon">
+                            <svg viewBox="0 0 24 24"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/></svg>
+                        </div>
+                    </button>
+                    <div class="faq-resposta">
+                        <div class="faq-resposta-inner">
+                            Algumas mulheres relatam perceber mudanças na primeira semana — não necessariamente grandes gestos, mas uma leveza diferente nas interações. O método completo é de 15 dias porque é o tempo mínimo para criar um novo padrão relacional. Resultados variam — mas o que os estudos de Wallerstein mostram é que gestos intencionais consistentes têm efeito acumulativo.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <p>Gabi Vieira - Todos os direitos reservados</p>
+        </div>
+    </footer>
+
+    <script>
+        // Scroll suave para oferta sem mudar URL
+        function scrollToOferta() {
+            const oferta = document.getElementById('oferta');
+            oferta.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+
+        // Animação de fade-in ao scroll
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+
+        // FAQ Accordion
+        document.querySelectorAll('.faq-pergunta').forEach(button => {
+            button.addEventListener('click', () => {
+                const item = button.parentElement;
+                const isActive = item.classList.contains('ativo');
+                
+                // Fecha todos
+                document.querySelectorAll('.faq-item').forEach(i => {
+                    i.classList.remove('ativo');
+                });
+                
+                // Abre o clicado (se não estava aberto)
+                if (!isActive) {
+                    item.classList.add('ativo');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
