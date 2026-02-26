@@ -293,10 +293,98 @@
             font-weight: 600;
         }
 
+        /* ==================== SEÇÃO CIÊNCIA ==================== */
+        .ciencia {
+            padding: 64px 0;
+            background: var(--branco);
+        }
+
+        .ciencia-content {
+            max-width: 720px;
+            margin: 0 auto;
+        }
+
+        .ciencia h2 {
+            font-size: clamp(1.4rem, 3.5vw, 2rem);
+            text-align: center;
+            margin-bottom: 32px;
+        }
+
+        .ciencia-texto {
+            font-size: 1.05rem;
+            color: var(--texto-secundario);
+        }
+
+        .ciencia-texto p {
+            margin-bottom: 20px;
+        }
+
+        .ciencia-texto .marca-verde {
+            background: linear-gradient(180deg, transparent 60%, rgba(35, 198, 95, 0.25) 60%);
+            padding: 0 4px;
+            font-weight: 600;
+            color: var(--texto-principal);
+        }
+
+        .ciencia-texto .marca-amarela {
+            background: linear-gradient(180deg, transparent 60%, rgba(245, 176, 65, 0.35) 60%);
+            padding: 0 4px;
+            font-weight: 600;
+            color: var(--texto-principal);
+        }
+
+        .ciencia-alerta {
+            background: linear-gradient(135deg, #FFF9E6 0%, #FFF5D6 100%);
+            border-left: 4px solid #F5B041;
+            padding: 20px 24px;
+            margin: 28px 0;
+            border-radius: 0 var(--radius) var(--radius) 0;
+        }
+
+        .ciencia-alerta p {
+            margin: 0;
+            font-weight: 600;
+            color: var(--texto-principal);
+            font-size: 1.05rem;
+        }
+
+        .ciencia-citacao {
+            background: var(--fundo-alt);
+            border-radius: var(--radius-lg);
+            padding: 28px 32px;
+            margin: 28px 0;
+            text-align: center;
+        }
+
+        .ciencia-citacao p {
+            font-style: italic;
+            font-size: 1.1rem;
+            color: var(--texto-principal);
+            margin-bottom: 12px;
+            line-height: 1.6;
+        }
+
+        .ciencia-citacao span {
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: var(--rosa-coral);
+        }
+
+        .ciencia-conclusao {
+            text-align: center;
+            margin-top: 28px;
+            font-size: 1.08rem;
+        }
+
+        .ciencia-conclusao .destaque-verde {
+            display: block;
+            margin-top: 4px;
+        }
+
         /* ==================== SEÇÃO QUEM SOU ==================== */
         .quem-sou {
             padding: 64px 0;
-            background: var(--branco);
+            background: var(--fundo-alt);
         }
 
         .quem-sou-grid {
@@ -374,7 +462,7 @@
         /* ==================== SEÇÃO MÉTODO ==================== */
         .metodo {
             padding: 64px 0;
-            background: var(--fundo-alt);
+            background: var(--branco);
         }
 
         .metodo h2 {
@@ -389,7 +477,7 @@
         .metodo-lista {
             max-width: 550px;
             margin: 0 auto 40px;
-            background: var(--branco);
+            background: var(--fundo-alt);
             border-radius: var(--radius-lg);
             padding: 8px;
             box-shadow: var(--sombra-card);
@@ -444,7 +532,7 @@
         /* ==================== SEÇÃO ENTREGÁVEIS ==================== */
         .entregaveis {
             padding: 64px 0;
-            background: var(--branco);
+            background: var(--fundo-alt);
         }
 
         .entregaveis-header {
@@ -475,7 +563,7 @@
         }
 
         .entregavel-card {
-            background: var(--fundo-alt);
+            background: var(--branco);
             border-radius: var(--radius-lg);
             padding: 28px;
             transition: var(--transicao);
@@ -518,7 +606,7 @@
         /* ==================== SEÇÃO DEPOIMENTOS ==================== */
         .depoimentos {
             padding: 64px 0;
-            background: var(--fundo-alt);
+            background: var(--branco);
         }
 
         .depoimentos-header {
@@ -542,21 +630,6 @@
             margin: 0 auto;
         }
 
-        .depoimentos-placeholder {
-            max-width: 800px;
-            margin: 0 auto;
-            text-align: center;
-            padding: 60px 32px;
-            background: var(--branco);
-            border-radius: var(--radius-lg);
-            border: 2px dashed var(--rosa-suave);
-        }
-
-        .depoimentos-placeholder p {
-            color: var(--texto-claro);
-            font-style: italic;
-        }
-
         .depoimentos-aviso {
             text-align: center;
             font-size: 0.9rem;
@@ -573,7 +646,7 @@
         }
 
         .depoimento-card {
-            background: var(--branco);
+            background: var(--fundo-alt);
             border-radius: var(--radius-lg);
             padding: 28px;
             position: relative;
@@ -621,7 +694,7 @@
             align-items: center;
             gap: 12px;
             padding-top: 16px;
-            border-top: 1px solid var(--fundo-alt);
+            border-top: 1px solid var(--rosa-suave);
         }
 
         .depoimento-avatar {
@@ -663,7 +736,7 @@
         /* ==================== SEÇÃO URGÊNCIA ==================== */
         .urgencia {
             padding: 64px 0;
-            background: var(--branco);
+            background: var(--fundo-alt);
         }
 
         .urgencia-content {
@@ -692,7 +765,7 @@
         /* ==================== SEÇÃO OFERTA ==================== */
         .oferta {
             padding: 64px 0;
-            background: linear-gradient(180deg, var(--fundo-alt) 0%, var(--fundo-principal) 100%);
+            background: linear-gradient(180deg, var(--branco) 0%, var(--fundo-principal) 100%);
         }
 
         .oferta-card {
@@ -825,14 +898,14 @@
         /* ==================== SEÇÃO GARANTIA ==================== */
         .garantia {
             padding: 64px 0;
-            background: var(--branco);
+            background: var(--fundo-alt);
         }
 
         .garantia-card {
             max-width: 650px;
             margin: 0 auto;
             text-align: center;
-            background: var(--fundo-alt);
+            background: var(--branco);
             border-radius: var(--radius-lg);
             padding: 48px 32px;
             border: 1px dashed var(--rosa-suave);
@@ -879,7 +952,7 @@
         /* ==================== SEÇÃO FAQ ==================== */
         .faq {
             padding: 64px 0;
-            background: var(--fundo-alt);
+            background: var(--branco);
         }
 
         .faq-header {
@@ -907,7 +980,7 @@
         }
 
         .faq-item {
-            background: var(--branco);
+            background: var(--fundo-alt);
             border-radius: var(--radius);
             margin-bottom: 12px;
             overflow: hidden;
@@ -941,7 +1014,7 @@
             flex-shrink: 0;
             width: 28px;
             height: 28px;
-            background: var(--fundo-alt);
+            background: var(--branco);
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -1058,6 +1131,7 @@
             }
 
             .problema,
+            .ciencia,
             .quem-sou,
             .metodo,
             .entregaveis,
@@ -1106,6 +1180,7 @@
             }
 
             .problema,
+            .ciencia,
             .quem-sou,
             .metodo,
             .entregaveis,
@@ -1157,6 +1232,28 @@
                 <p>E por baixo dessa rotina tem uma pergunta que você não quer fazer em voz alta:</p>
                 <div class="destaque-bloco">"Será que ainda dá tempo de recuperar o que a gente tinha?"</div>
                 <p><strong class="destaque">Dá! Mas não do jeito que você está tentando.</strong></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CIÊNCIA -->
+    <section class="ciencia">
+        <div class="container">
+            <div class="ciencia-content">
+                <h2 class="fade-in">Existe uma explicação científica para o que você está sentindo</h2>
+                <div class="ciencia-texto fade-in">
+                    <p>Judith S. Wallerstein foi a maior pesquisadora de <span class="marca-verde">casamentos felizes do século XX.</span></p>
+                    <p>Durante 25 anos, ela entrevistou 50 casais que se amavam de verdade, casais que continuavam se escolhendo depois de anos juntos, filhos, rotina e tudo mais.</p>
+                    <div class="ciencia-alerta">
+                        <p>E o que ela descobriu mudou tudo o que se sabia sobre relacionamentos. Casais infelizes não brigam mais. Eles se abandonam emocionalmente sem perceber.</p>
+                    </div>
+                    <p>Wallerstein chamou isso de <strong>desnutrição afetiva</strong>: um distanciamento gradual, silencioso, onde nenhum dos dois consegue apontar o dia exato em que a conexão foi embora.</p>
+                    <div class="ciencia-citacao">
+                        <p>"O que destrói um casamento não é o conflito, é o abandono emocional. Um relacionamento sem nutrição emocional morre de desnutrição afetiva."</p>
+                        <span>— Judith S. Wallerstein</span>
+                    </div>
+                    <p class="ciencia-conclusao">Se você se reconheceu nas palavras acima, saiba que o que você sente tem nome. Tem explicação. <span class="destaque-verde">E tem solução.</span></p>
+                </div>
             </div>
         </div>
     </section>
