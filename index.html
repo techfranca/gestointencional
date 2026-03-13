@@ -295,6 +295,40 @@
             margin-bottom: 20px;
         }
 
+        .problema-bullet {
+            font-weight: 500;
+            color: var(--texto-principal);
+            padding: 10px 16px;
+            background: rgba(184, 84, 80, 0.06);
+            border-radius: var(--radius);
+            margin-bottom: 10px !important;
+        }
+
+        /* ==================== SEÇÃO TRANSIÇÃO CIÊNCIA ==================== */
+        .transicao-ciencia {
+            padding: 56px 0;
+            background: var(--branco);
+        }
+
+        .transicao-content {
+            max-width: 680px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .transicao-content p {
+            font-size: 1.1rem;
+            color: var(--texto-secundario);
+            margin-bottom: 20px;
+            line-height: 1.7;
+        }
+
+        .transicao-content p:last-child {
+            margin-bottom: 0;
+            font-size: 1.15rem;
+            color: var(--texto-principal);
+        }
+
         .problema-texto strong {
             color: var(--texto-principal);
             font-weight: 600;
@@ -906,6 +940,51 @@
             margin-right: 4px;
         }
 
+        .oferta-intro {
+            max-width: 420px;
+            margin: 0 auto 28px;
+            text-align: left;
+        }
+
+        .oferta-intro-comparativo {
+            font-size: 0.95rem;
+            color: var(--texto-secundario);
+            margin-bottom: 12px;
+            padding-bottom: 16px;
+            border-bottom: 1px solid var(--fundo-alt);
+        }
+
+        .oferta-entregaveis {
+            list-style: none;
+            margin: 20px 0 28px;
+            text-align: left;
+        }
+
+        .oferta-entregaveis li {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            font-size: 0.95rem;
+            color: var(--texto-principal);
+            margin-bottom: 12px;
+            line-height: 1.5;
+        }
+
+        .oferta-entregaveis li::before {
+            content: '→';
+            color: var(--verde-cta);
+            font-weight: 700;
+            flex-shrink: 0;
+            margin-top: 1px;
+        }
+
+        .oferta-garantia-inline {
+            margin-top: 16px;
+            font-size: 0.85rem;
+            color: var(--texto-claro);
+            line-height: 1.5;
+        }
+
         /* ==================== SEÇÃO GARANTIA ==================== */
         .garantia {
             padding: 64px 0;
@@ -1248,13 +1327,13 @@
     <section class="hero">
         <div class="container">
             <div class="hero-content">
-                <h1>Você ainda ama o seu marido, <span class="destaque">mas em algum momento os dois viraram mais amigos que parceiros.</span> E o pior: você não sabe como voltar.</h1>
-                <h2>Descubra o método do Gesto Intencional, baseado na maior pesquisa sobre casais felizes do século XX - E reconecte com seu parceiro em 15 dias, com apenas 10 minutos por dia, sem precisar que ele participe.</h2>
+                <h1>Reconecte com seu marido em 15 dias — <span class="destaque">sem conversas difíceis e sem terapia</span></h1>
+                <h2>O Método do Gesto Intencional é baseado na maior pesquisa sobre casais felizes do século XX — 15 ações simples, de 10 minutos por dia, que qualquer mulher pode aplicar sozinha.</h2>
                 <div class="hero-imagem">
                     <img src="assets/faltadeatencao_casais.jpg" alt="Casal com distanciamento emocional deitados na cama usando celular" loading="lazy">
                 </div>
                 <a href="javascript:void(0)" class="btn-cta" onclick="scrollToOferta()">
-                    Quero reconectar com meu marido
+                    Quero começar ainda hoje
                     <svg viewBox="0 0 24 24"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/></svg>
                 </a>
                 <div class="hero-scroll-indicator" aria-hidden="true">
@@ -1265,93 +1344,30 @@
         </div>
     </section>
 
-    <!-- DEPOIMENTOS -->
-    <section class="depoimentos">
+    <!-- PROBLEMA -->
+    <section class="problema">
         <div class="container">
-            <div class="depoimentos-header fade-in">
-                <h2>Essas mulheres confiaram no método e hoje vivem relacionamentos felizes e amorosos</h2>
-            </div>
-            <p class="depoimentos-aviso fade-in">Os depoimentos não contêm imagens das pessoas, pois pela lei precisamos manter sob sigilo.</p>
-            
-            <div class="depoimentos-grid fade-in">
-                <div class="depoimento-card">
-                    <div class="depoimento-aspas">
-                        <svg viewBox="0 0 24 24"><path d="M6 17h3l2-4V7H5v6h3zm8 0h3l2-4V7h-6v6h3z"/></svg>
-                    </div>
-                    <div class="depoimento-stars">
-                        <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-                        <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-                        <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-                        <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-                        <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-                    </div>
-                    <p class="depoimento-texto">"Meu relacionamento melhorou muito com o protocolo e isso trouxe para nós como casal insights e maneiras de trabalhar as diferenças existentes."</p>
-                    <div class="depoimento-autor">
-                        <div class="depoimento-avatar">AP</div>
-                        <div class="depoimento-info">
-                            <span class="depoimento-nome">Aluna do curso</span>
-                            <span class="depoimento-verificado">Depoimento verificado</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="depoimento-card">
-                    <div class="depoimento-aspas">
-                        <svg viewBox="0 0 24 24"><path d="M6 17h3l2-4V7H5v6h3zm8 0h3l2-4V7h-6v6h3z"/></svg>
-                    </div>
-                    <div class="depoimento-stars">
-                        <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-                        <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-                        <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-                        <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-                        <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-                    </div>
-                    <p class="depoimento-texto">"O protocolo ajudou a demonstrar empatia e respeito pelo limite de cada um, e a diferença no casamento é perceptível! Amigos e familiares vieram comentar sobre a nossa mudança!"</p>
-                    <div class="depoimento-autor">
-                        <div class="depoimento-avatar">ER</div>
-                        <div class="depoimento-info">
-                            <span class="depoimento-nome">Aluna do curso</span>
-                            <span class="depoimento-verificado">Depoimento verificado</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="depoimento-card">
-                    <div class="depoimento-aspas">
-                        <svg viewBox="0 0 24 24"><path d="M6 17h3l2-4V7H5v6h3zm8 0h3l2-4V7h-6v6h3z"/></svg>
-                    </div>
-                    <div class="depoimento-stars">
-                        <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-                        <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-                        <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-                        <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-                        <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-                    </div>
-                    <p class="depoimento-texto">"O Protocolo é uma ferramenta importante para que possamos trabalhar as nossas diferenças e a forma como lidamos com situações. Salvou o meu casamento!"</p>
-                    <div class="depoimento-autor">
-                        <div class="depoimento-avatar">CS</div>
-                        <div class="depoimento-info">
-                            <span class="depoimento-nome">Aluna do curso</span>
-                            <span class="depoimento-verificado">Depoimento verificado</span>
-                        </div>
-                    </div>
-                </div>
+            <h2 class="fade-in">Isso não é falta de amor. <span class="destaque">É excesso de rotina.</span></h2>
+            <div class="problema-texto fade-in">
+                <p>A vida parece normal por fora.</p>
+                <p>Mas às vezes, no final do dia, vem aquela sensação:</p>
+                <div class="destaque-bloco">"A gente está aqui, na mesma casa — mas não está mais junto de verdade."</div>
+                <p>É uma distância que foi crescendo sem que nenhum dos dois percebesse. Sem brigas graves, sem traição, sem um motivo que você consiga apontar.</p>
+                <p class="problema-bullet">❌ Você já tentou conversar. Ele ouviu, mas nada mudou.</p>
+                <p class="problema-bullet">❌ Você já tentou criar um momento especial. A rotina engoliu em dias.</p>
+                <p class="problema-bullet">❌ Você já se perguntou se está exagerando — afinal, "está tudo bem".</p>
+                <p>Mas você sente. No silêncio que virou normal. Na sensação de que vocês viraram companheiros de casa, não parceiros de vida.</p>
             </div>
         </div>
     </section>
 
-    <!-- PROBLEMA -->
-    <section class="problema">
+    <!-- TRANSIÇÃO CIÊNCIA -->
+    <section class="transicao-ciencia">
         <div class="container">
-            <h2 class="fade-in">Isso não é falta de amor. <span class="destaque">É excesso de rotina</span></h2>
-            <div class="problema-texto fade-in">
-                <p>A vida parece normal, mas às vezes, no final do dia, vem aquela sensação:</p>
-                <div class="destaque-bloco">"A gente está aqui, na mesma casa, mas não está mais junto de verdade"</div>
-                <p>É uma distância que foi crescendo sem que nenhum dos dois percebesse, e agora parece enorme</p>
-                <p>Você já tentou conversar. Ele ouviu, mas não mudou nada. Você já tentou fazer um programa diferente, mas a rotina engoliu em dias.</p>
-                <p>E por baixo dessa rotina tem uma pergunta que você não quer fazer em voz alta:</p>
-                <div class="destaque-bloco">"Será que ainda dá tempo de recuperar o que a gente tinha?"</div>
-                <p><strong class="destaque">Dá! Mas não do jeito que você está tentando.</strong></p>
+            <div class="transicao-content fade-in">
+                <p>Você já parou pra pensar por que alguns casais, depois de anos, filhos e rotina, ainda se olham como se fossem os primeiros dias — e outros não?</p>
+                <p>Não é sorte. Não é compatibilidade. Não é porque eles não têm problemas.</p>
+                <p><strong>Existe uma explicação científica para o que separa esses casais — e ela muda tudo o que você acredita sobre relacionamentos.</strong></p>
             </div>
         </div>
     </section>
@@ -1360,19 +1376,15 @@
     <section class="ciencia">
         <div class="container">
             <div class="ciencia-content">
-                <h2 class="fade-in">Existe uma explicação científica para o que você está sentindo</h2>
+                <h2 class="fade-in">Judith S. Wallerstein foi a maior pesquisadora de casamentos felizes do século XX — <span class="destaque">e fez uma descoberta que muda tudo.</span></h2>
                 <div class="ciencia-texto fade-in">
-                    <p>Judith S. Wallerstein foi a maior pesquisadora de <span class="marca-verde">casamentos felizes do século XX.</span></p>
-                    <p>Durante 25 anos, ela entrevistou 50 casais que se amavam de verdade, casais que continuavam se escolhendo depois de anos juntos, filhos, rotina e tudo mais.</p>
+                    <p>Durante mais de 25 anos, ela estudou casais que, mesmo depois de anos juntos, filhos, trabalhos e rotinas, continuavam se escolhendo.</p>
+                    <p>Ela percebeu um padrão que ninguém esperava.</p>
                     <div class="ciencia-alerta">
-                        <p>E o que ela descobriu mudou tudo o que se sabia sobre relacionamentos. Casais infelizes não brigam mais. Eles se abandonam emocionalmente sem perceber.</p>
+                        <p>Casais infelizes não brigam mais. Eles <em>param de se nutrir emocionalmente</em> — sem perceber. Wallerstein chamou isso de <strong>desnutrição afetiva</strong>: um distanciamento gradual e silencioso, onde nenhum dos dois consegue apontar o dia exato em que a conexão foi embora.</p>
                     </div>
-                    <p>Wallerstein chamou isso de <strong>desnutrição afetiva</strong>: um distanciamento gradual, silencioso, onde nenhum dos dois consegue apontar o dia exato em que a conexão foi embora.</p>
-                    <div class="ciencia-citacao">
-                        <p>"O que destrói um casamento não é o conflito, é o abandono emocional. Um relacionamento sem nutrição emocional morre de desnutrição afetiva."</p>
-                        <span>— Judith S. Wallerstein</span>
-                    </div>
-                    <p class="ciencia-conclusao">Se você se reconheceu nas palavras acima, saiba que o que você sente tem nome. Tem explicação. <span class="destaque-verde">E tem solução.</span></p>
+                    <p>Já os casais felizes fazem algo diferente. Não nas grandes viagens ou nos gestos grandiosos. Eles se nutrem todos os dias — em <span class="marca-amarela">micro-momentos simples que ativam funções psicológicas específicas</span>: amizade, respeito, cumplicidade, segurança emocional.</p>
+                    <p class="ciencia-conclusao">São esses gestos que mantêm viva a escolha de um pelo outro. <span class="destaque-verde">Todo dia.</span></p>
                 </div>
             </div>
         </div>
@@ -1405,88 +1417,77 @@
         </div>
     </section>
 
-    <!-- MÉTODO -->
-    <section class="metodo">
+    <!-- DEPOIMENTOS -->
+    <section class="depoimentos">
         <div class="container">
-            <h2 class="fade-in">A felicidade no casamento não vem dos grandes momentos. <span class="destaque">Vem dos micro-momentos de conexão repetidos todos os dias</span></h2>
-            <div class="metodo-lista fade-in">
-                <div class="metodo-item">
-                    <div class="metodo-check">
-                        <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg>
-                    </div>
-                    <p>Um elogio genuíno</p>
-                </div>
-                <div class="metodo-item">
-                    <div class="metodo-check">
-                        <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg>
-                    </div>
-                    <p>Um toque sem segunda intenção</p>
-                </div>
-                <div class="metodo-item">
-                    <div class="metodo-check">
-                        <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg>
-                    </div>
-                    <p>Uma risada no meio da tensão</p>
-                </div>
-                <div class="metodo-item">
-                    <div class="metodo-check">
-                        <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg>
-                    </div>
-                    <p>A escolha de proteger em vez de culpar</p>
-                </div>
+            <div class="depoimentos-header fade-in">
+                <h2>Essas mulheres confiaram no método e hoje vivem relacionamentos felizes e amorosos</h2>
             </div>
-            <div class="metodo-conclusao fade-in">
-                <div class="destaque-bloco">Esses gestos não são aleatórios. Cada um ativa uma função psicológica específica - Amizade, respeito, cumplicidade, segurança emocional.</div>
-                <p>Que são a base de todo casamento feliz.</p>
-            </div>
-        </div>
-    </section>
+            <p class="depoimentos-aviso fade-in">Os depoimentos não contêm imagens das pessoas, pois pela lei precisamos manter sob sigilo.</p>
 
-    <!-- ENTREGÁVEIS -->
-    <section class="entregaveis">
-        <div class="container">
-            <div class="entregaveis-header fade-in">
-                <span>O que você vai receber</span>
-                <h2>O que você vai levar com o protocolo:</h2>
-            </div>
-            <div class="entregaveis-grid">
-                <div class="entregavel-card fade-in">
-                    <div class="entregavel-icon">
-                        <svg viewBox="0 0 24 24"><path d="M12.1 21.35l-1.1-1C5.14 15.24 2 12.39 2 8.9 2 6.05 4.24 4 7.05 4c1.6 0 3.14.74 4.05 1.91C12.01 4.74 13.55 4 15.15 4 17.96 4 20.2 6.05 20.2 8.9c0 3.49-3.14 6.34-8.99 11.46l-1.11.99z"/></svg>
+            <div class="depoimentos-grid fade-in">
+                <div class="depoimento-card">
+                    <div class="depoimento-aspas">
+                        <svg viewBox="0 0 24 24"><path d="M6 17h3l2-4V7H5v6h3zm8 0h3l2-4V7h-6v6h3z"/></svg>
                     </div>
-                    <h3>O manual completo do método gesto intencional</h3>
-                    <p>15 ações diárias baseadas nas tarefas psicológicas. Cada ação vem com explicação do por que funciona, como aplicar e o que esperar. Direto ao ponto, sem teoria pesada.</p>
-                </div>
-                <div class="entregavel-card fade-in">
-                    <div class="entregavel-icon">
-                        <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l7 4.5-7 4.5z"/></svg>
+                    <div class="depoimento-stars">
+                        <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
                     </div>
-                    <h3>Um conteúdo completo em vídeo</h3>
-                    <p>Eu vou te explicar a ciência por trás do método, os erros mais comuns que fazem o esforço não funcionar, e como usar o manual da forma certa para os 15 dias.</p>
-                </div>
-                <div class="entregavel-card fade-in">
-                    <div class="entregavel-icon">
-                        <svg viewBox="0 0 24 24"><path d="M12 1l2.09 4.23L18.75 6l-3.38 3.29.8 4.66L12 11.77 7.83 13.95l.8-4.66L5.25 6l4.66-.77L12 1zm7 12c-1.16 0-2.26.42-3.09 1.19L14 16.1l-1.91-1.91A4.37 4.37 0 0 0 9 13c-2.42 0-4.38 1.96-4.38 4.38S6.58 21.75 9 21.75c1.16 0 2.26-.42 3.09-1.19L14 18.65l1.91 1.91A4.37 4.37 0 0 0 19 21.75c2.42 0 4.38-1.96 4.38-4.38S21.42 13 19 13zm0 6.75c-.63 0-1.22-.24-1.67-.69L14 15.73l-3.33 3.33c-.45.45-1.04.69-1.67.69-1.31 0-2.38-1.06-2.38-2.38S7.69 15 9 15c.63 0 1.22.24 1.67.69L14 19.02l3.33-3.33c.45-.45 1.04-.69 1.67-.69 1.31 0 2.38 1.07 2.38 2.38s-1.07 2.37-2.38 2.37z"/></svg>
+                    <p class="depoimento-texto">"Meu relacionamento melhorou muito com o protocolo e isso trouxe para nós como casal insights e maneiras de trabalhar as diferenças existentes."</p>
+                    <div class="depoimento-autor">
+                        <div class="depoimento-avatar">AP</div>
+                        <div class="depoimento-info">
+                            <span class="depoimento-nome">Aluna do curso</span>
+                            <span class="depoimento-verificado">Depoimento verificado</span>
+                        </div>
                     </div>
-                    <h3>Bônus: Acesso vitalício</h3>
-                    <p>Garantindo sua vaga hoje, você recebe acesso vitalício ao conteúdo, para revisitar quando quiser e precisar.</p>
                 </div>
-            </div>
-        </div>
-    </section>
 
-    
+                <div class="depoimento-card">
+                    <div class="depoimento-aspas">
+                        <svg viewBox="0 0 24 24"><path d="M6 17h3l2-4V7H5v6h3zm8 0h3l2-4V7h-6v6h3z"/></svg>
+                    </div>
+                    <div class="depoimento-stars">
+                        <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                    </div>
+                    <p class="depoimento-texto">"O protocolo ajudou a demonstrar empatia e respeito pelo limite de cada um, e a diferença no casamento é perceptível! Amigos e familiares vieram comentar sobre a nossa mudança!"</p>
+                    <div class="depoimento-autor">
+                        <div class="depoimento-avatar">ER</div>
+                        <div class="depoimento-info">
+                            <span class="depoimento-nome">Aluna do curso</span>
+                            <span class="depoimento-verificado">Depoimento verificado</span>
+                        </div>
+                    </div>
+                </div>
 
-    <!-- URGÊNCIA -->
-    <section class="urgencia">
-        <div class="container">
-            <div class="urgencia-content fade-in">
-                <h2>Você chegou até aqui porque algo nessa página fez sentido pra você, não é coincidência!</h2>
-                <p>Agora, por menos do que um jantar fora, você pode começar a mudar a realidade do seu relacionamento hoje!</p>
-                <a href="javascript:void(0)" class="btn-cta" onclick="scrollToOferta()">
-                    Quero começar agora
-                    <svg viewBox="0 0 24 24"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/></svg>
-                </a>
+                <div class="depoimento-card">
+                    <div class="depoimento-aspas">
+                        <svg viewBox="0 0 24 24"><path d="M6 17h3l2-4V7H5v6h3zm8 0h3l2-4V7h-6v6h3z"/></svg>
+                    </div>
+                    <div class="depoimento-stars">
+                        <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                    </div>
+                    <p class="depoimento-texto">"O Protocolo é uma ferramenta importante para que possamos trabalhar as nossas diferenças e a forma como lidamos com situações. Salvou o meu casamento!"</p>
+                    <div class="depoimento-autor">
+                        <div class="depoimento-avatar">CS</div>
+                        <div class="depoimento-info">
+                            <span class="depoimento-nome">Aluna do curso</span>
+                            <span class="depoimento-verificado">Depoimento verificado</span>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -1496,17 +1497,16 @@
         <div class="container">
             <div class="oferta-card fade-in">
                 <span class="oferta-badge">62% OFF</span>
-                
-                <div class="oferta-icon">
-                    <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
-                </div>
-                
-                <h2 class="oferta-titulo">Método do Gesto Intencional</h2>
-                <p class="oferta-subtitulo">Oferta Especial de Lançamento</p>
-                
-                <div class="oferta-item">
-                    <span class="oferta-item-nome">Acesso ao Método do Gesto Intencional</span>
-                    <span class="oferta-item-preco">R$97</span>
+
+                <h2 class="oferta-titulo">Tudo que você precisa para reconectar com seu marido em 15 dias</h2>
+
+                <div class="oferta-intro">
+                    <p class="oferta-intro-comparativo">Uma sessão de terapia de casal custa em média R$300 — e exige que ele queira ir. O Método do Gesto Intencional custa <strong>R$37</strong>. Você aplica sozinha, no seu tempo, nos seus 10 minutos do dia. Sem pedir permissão pra ninguém.</p>
+                    <ul class="oferta-entregaveis">
+                        <li><strong>Manual completo</strong> — 15 gestos intencionais com a explicação de por que cada um reativa a conexão</li>
+                        <li><strong>Conteúdo em vídeo completo</strong> — a ciência por trás do método e como aplicar do jeito certo</li>
+                        <li><strong>Acesso vitalício</strong> — revisita quando quiser e precisar</li>
+                    </ul>
                 </div>
 
                 <div class="oferta-preco-container">
@@ -1516,28 +1516,16 @@
                 </div>
 
                 <a href="https://pay.kiwify.com.br/rCPqeHj" class="btn-cta" id="btn-checkout">
-                    Garantir Oferta Especial
+                    Quero reconectar com meu marido por R$37
                     <svg viewBox="0 0 24 24"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/></svg>
                 </a>
-                
+
+                <p class="oferta-garantia-inline">Testou, não gostou, te devolvo 100% em até 7 dias. Sem pergunta, sem burocracia. O risco é todo meu.</p>
+
                 <p class="oferta-acesso">
                     <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg>
                     Acesso imediato após a compra
                 </p>
-            </div>
-        </div>
-    </section>
-
-    <!-- GARANTIA -->
-    <section class="garantia">
-        <div class="container">
-            <div class="garantia-card fade-in">
-                <div class="garantia-icon">
-                    <svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/></svg>
-                </div>
-                <h2>Garantia de 7 dias</h2>
-                <p>Se em 7 dias você não sentir que o material é exatamente o que eu prometi, você me pede o reembolso que eu devolvo 100% do seu dinheiro - sem burocracia.</p>
-                <p class="garantia-destaque">O risco é meu, o resultado é seu!</p>
             </div>
         </div>
     </section>
@@ -1547,7 +1535,7 @@
         <div class="container">
             <div class="faq-header fade-in">
                 <span>Dúvidas</span>
-                <h2>FAQ — Tirando suas dúvidas reais</h2>
+                <h2>Dúvidas frequentes</h2>
             </div>
             <div class="faq-lista">
                 <div class="faq-item fade-in">
@@ -1559,46 +1547,46 @@
                     </button>
                     <div class="faq-resposta">
                         <div class="faq-resposta-inner">
-                            Exatamente por isso é o momento certo. O Método do Gesto Intencional não é para casamento em crise — é para casamento no piloto automático. Reacender uma chama baixa é muito mais fácil do que tentar acender uma que já apagou. Wallerstein descobriu isso estudando casais felizes: eles cuidam da relação de forma contínua, antes de precisar.
+                            Sim — especialmente por isso. É muito mais fácil reacender uma chama baixa do que tentar acender uma que já apagou. Esse método foi feito para quem ainda ama, mas perdeu a conexão do dia a dia.
                         </div>
                     </div>
                 </div>
                 <div class="faq-item fade-in">
                     <button class="faq-pergunta">
-                        <span>"Eu já tentei de tudo. Por que isso vai ser diferente?"</span>
+                        <span>"E se ele não quiser participar?"</span>
                         <div class="faq-icon">
                             <svg viewBox="0 0 24 24"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/></svg>
                         </div>
                     </button>
                     <div class="faq-resposta">
                         <div class="faq-resposta-inner">
-                            Porque o que você tentou antes provavelmente eram coisas aleatórias — uma viagem, uma conversa, um esforço sem estrutura. O Método do Gesto Intencional tem uma sequência psicológica — cada ação nos 15 dias foi escolhida para ativar uma função emocional específica identificada na pesquisa de Wallerstein. Não é tentativa e erro. É ciência aplicada na prática.
+                            Esse método foi desenhado pra funcionar só com você. Sem convencer ele de nada, sem conversa difícil. Você muda a energia que projeta — e ele percebe, sem saber o porquê.
                         </div>
                     </div>
                 </div>
                 <div class="faq-item fade-in">
                     <button class="faq-pergunta">
-                        <span>"E se o meu marido não quiser participar?"</span>
+                        <span>"Não tenho tempo. Tenho filho, trabalho e faço tudo em casa."</span>
                         <div class="faq-icon">
                             <svg viewBox="0 0 24 24"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/></svg>
                         </div>
                     </button>
                     <div class="faq-resposta">
                         <div class="faq-resposta-inner">
-                            Esse método foi desenhado para funcionar só com você. Você não vai precisar convencer o seu marido de nada, mostrar um método ou ter uma conversa difícil. As ações mudam a energia que você projeta na relação — e essa mudança é percebida por ele de forma natural, sem que você precise pedir ou explicar.
+                            São 10 minutos por dia. O tamanho do método é parte do design — porque se não cabe na sua vida como ela é, não funciona.
                         </div>
                     </div>
                 </div>
                 <div class="faq-item fade-in">
                     <button class="faq-pergunta">
-                        <span>"Não tenho tempo. Tenho filho pequeno, trabalho fora e faço tudo em casa."</span>
+                        <span>"Já tentei de tudo. Por que isso vai ser diferente?"</span>
                         <div class="faq-icon">
                             <svg viewBox="0 0 24 24"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/></svg>
                         </div>
                     </button>
                     <div class="faq-resposta">
                         <div class="faq-resposta-inner">
-                            Eu sei disso. E foi exatamente pensando em você que o método foi construído. São 10 minutos por dia — uma ação clara, objetiva, sem leitura longa ou teoria densa. O tamanho do método é parte do design. Porque se não cabe na sua vida como ela é, não funciona.
+                            Porque o que você tentou antes eram gestos aleatórios — esforço sem direção. O Método do Gesto Intencional tem uma sequência psicológica. Cada gesto foi escolhido para ativar uma função emocional específica. Não é tentativa e erro. É ciência aplicada.
                         </div>
                     </div>
                 </div>
@@ -1611,7 +1599,7 @@
                     </button>
                     <div class="faq-resposta">
                         <div class="faq-resposta-inner">
-                            Algumas mulheres relatam perceber mudanças na primeira semana — não necessariamente grandes gestos, mas uma leveza diferente nas interações. O método completo é de 15 dias porque é o tempo mínimo para criar um novo padrão relacional. Resultados variam — mas o que os estudos de Wallerstein mostram é que gestos intencionais consistentes têm efeito acumulativo.
+                            Algumas mulheres percebem na primeira semana — não nos grandes gestos, mas numa leveza diferente. Num olhar. Numa mensagem que não esperava. O método completo é 15 dias, mas você vai sentir a diferença antes disso.
                         </div>
                     </div>
                 </div>
